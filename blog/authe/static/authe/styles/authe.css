@@ -1,0 +1,80 @@
+/* Общие стили для всей страницы */
+body {
+    background-color: #ffffff; /* Темный цвет фона страницы */
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для header (шапки) */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 130px;
+    background-color: #fff; /* Белый цвет фона header */
+    width: 100%;
+    border-bottom: 0.5px solid #E7E7E7; /* Добавляем нижнюю границу (полоску) */
+}
+
+
+/* Стили для текста в header */
+.title, .search, .register, .login {
+    font-family: "Roboto", sans-serif; 
+    color: #00A2DC; /* Цвет текста */
+}
+
+/* Decode */
+.title {
+    font-size: 50px;
+    margin-left: 100px;
+}
+
+
+
+/* Стили для кнопок "Регистрация" и "Вход" */
+
+.register, .login {
+    width: 130px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: #00A2DC;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+}
+
+.login {
+    margin-right: 100px; /* Отступ между кнопками "Регистрация" и "Вход" */
+}
+
+.register {
+    margin-right: 20px;
+}
+
+
+/* Стили для поля ввода и кнопки "Найти" */
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    width: 321px;
+    height: 50px;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.search-button {
+    height: 50px;
+    width: 91px;
+    border-radius: 0 4px 4px 0;
+    border: 1px solid #ccc;
+    color: #fff;
+    background-color: #00A2DC;
+    cursor: pointer;
+}
+
+

@@ -1,0 +1,14 @@
+{% extends "authe/base.html" %}
+
+{% block title %}Войти{% endblock %}
+
+{% block content %}
+ 
+  <form method="post" class="form-signin" style="display: flex; align-items: center; flex-direction: column;padding-top: 250px;">
+    {% csrf_token %}
+    {{ form.username }}
+    {{ form.password }}
+    <button type="submit" class="btn btn-dark">Войти</button>
+    <p class="mt-1">Нет аккаунта? <a href="{% url 'authe:register' %}">Зарегистрироваться</a></p>
+  </form>
+{% endblock %}

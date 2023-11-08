@@ -1,0 +1,16 @@
+{% extends 'authe/base.html' %}
+{% block title%} Зарегистрироваться {% endblock %}
+{% block content %}
+
+    <form method="post" style="display: flex; flex-direction: column; align-items: center;" class="form-control">
+        {% csrf_token %}
+        {% for f in form %}
+            <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{f}}</p>
+            <div class="form-error"> {{f.errors }} </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-dark"> Зарегистрироваться </button>
+        <p class="mt-1">Есть аккаунт? <a href="{% url 'authe:login' %}">Войти</a></p>
+    </form>
+    
+
+{% endblock %}
