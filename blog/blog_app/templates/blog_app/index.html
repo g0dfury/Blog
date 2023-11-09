@@ -1,0 +1,29 @@
+{% extends "authe/base.html" %}
+{% load static %}
+
+{% block title %} Главная страница {% endblock %}
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'blog_app/styles/blog.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="blog-list">
+        {% for b in blogs %}
+            <div class="blog-item">
+                <h2>{{ b.title }}</h2>
+                <p><strong>Автор:</strong> {{ b.author.username }}</p>
+                <p><strong>Дата создания:</strong> {{ b.created_at|date:"d.m.Y H:i:s" }}</p>
+                <div class="blog-content">
+                    {{ b.content|linebreaks }}
+                </div>
+                {% if b.author.is_superuser %}
+                    <p class="developer-blog">Блог разработчика</p>
+                {% else %}
+                    <p class="user-blog">Пользовательский блог</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

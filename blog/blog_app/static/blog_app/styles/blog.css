@@ -1,0 +1,67 @@
+/* blog.css */
+
+
+/* Ensure the blog items span the full width with margins */
+/* blog.css */
+
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    max-width: 100%; 
+}
+
+
+.blog-item {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 20px; /* Increase padding for more space inside the items */
+    margin: 20px 0; /* Add spacing between blog items */
+    max-width: 100%; /* Allow items to take up full width */
+    border-radius: 5px;
+}
+
+/* Title styling */
+.blog-item h2 {
+    font-size: 1.75rem;
+    margin: 0 0 10px; /* Add some spacing between the title and content */
+    font-family: 'Arial', sans-serif; /* Change font family */
+}
+
+/* Author information styling */
+.blog-item p {
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Change font family */
+}
+
+/* Blog content styling */
+.blog-content {
+    margin-top: 20px; /* Increase spacing between content and author info */
+    font-family: 'Verdana', sans-serif; /* Change font family */
+}
+
+/* Blog type styling */
+
+.user-blog {
+    border-radius: 3px;
+    display: inline-block;
+    font-weight: bold; /* Make the type bold */
+    font-family: 'Arial', sans-serif; /* Change font family */
+    padding-top: 5px;
+}
+    
+.developer-blog {
+    border-radius: 3px;
+    display: inline-block;
+    font-weight: bold; /* Make the type bold */
+    font-family: 'Arial', sans-serif; /* Change font family */
+    padding-top: 5px;
+}
+
+/* title */
+h2 {
+    font-weight: 700;
+    color: black;
+}
