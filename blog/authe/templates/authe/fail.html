@@ -1,6 +1,21 @@
 {% extends 'authe/base.html' %}
-{% block title %} Что-то пошло не так.. {% endblock %}
+{% block title %} Ошибка авторизации {% endblock %}
 
 {% block content %}
-<h1> ЧТО-ТО ПОШЛО НЕ ТАК ...</h1></H1>
+    <style>
+        .center-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 75vh; /* Центрирование по вертикали */
+        }
+    </style>
+
+    <div class="center-content"> 
+        <h1>Ошибка авторизации</h1>
+        <p>Извините, вы ввели неверные учетные данные. Пожалуйста, попробуйте снова.</p>
+        <p>Вернуться на страницу авторизации <a href="{% url 'authe:login' %}">Вернуться</a></p>
+    </div>
 {% endblock %}

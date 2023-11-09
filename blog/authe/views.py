@@ -3,7 +3,7 @@ from django.views import View
 from django.contrib.auth import login, logout, authenticate
 from django.urls import reverse_lazy
 
-
+from blog_app import urls
 from .forms import UserSignUpForm, UserSignInForm
 from .models import User
 
@@ -37,7 +37,7 @@ class Login(View): # для логина
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect(reverse_lazy('authe:index'))
+                return redirect(reverse_lazy('blogs:index'))
         
         return render(request, 'authe/fail.html', context={'form': form})
 
