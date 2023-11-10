@@ -9,6 +9,9 @@
 
 
 {% block content %}
+
+<p class="mt-1">Хотите создать свой Блог? <a href="{% url 'blogs:create' %}" class="btn btn-dark">Создать</a></p>
+
     <div class="blog-list">
         {% for b in blogs %}
             <div class="blog-item">
@@ -27,3 +30,4 @@
         {% endfor %}
     </div>
 {% endblock %}
+

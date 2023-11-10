@@ -1,0 +1,20 @@
+{% extends "authe/base.html" %}
+{% load static %}
+{% block title %} Создание блога {% endblock %}
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'blog_app/styles/create.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="create-blog-container">
+        <h2>Создание блога</h2>
+        <form method="post" class="create-blog-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="create-blog-button">Создать блог</button>
+        </form>
+        <a href="{% url 'blogs:index' %}" class="btn btn-dark">Назад к блогам</a>
+    </div>
+{% endblock %}

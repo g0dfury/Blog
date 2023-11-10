@@ -5,7 +5,7 @@ from authe.models import User
 class Blog(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField(null=False)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

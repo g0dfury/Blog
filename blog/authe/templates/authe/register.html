@@ -1,5 +1,13 @@
 {% extends 'authe/base.html' %}
 {% block title%} Зарегистрироваться {% endblock %}
+
+{% load static %}
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'authe/styles/forms.css' %}">        
+{% endblock %}
+
+
 {% block content %}
     <div class="form-wrapper">
         <form method="post" class="form-signin" style="display: flex; align-items: center; flex-direction: column;padding-top: 250px;">

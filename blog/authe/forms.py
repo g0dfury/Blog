@@ -20,6 +20,8 @@ class UserSignUpForm(UserCreationForm):
 
 class UserSignInForm(AuthenticationForm):
     class Meta:
+
+        
         widgets = {
             'username': forms.TextInput(attrs={'placeholder': 'Username'}),
             'password': forms.PasswordInput(attrs={'placeholder': 'Password'}),
