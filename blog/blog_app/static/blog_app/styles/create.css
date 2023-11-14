@@ -9,6 +9,8 @@
 
 .create-blog-form {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .create-blog-button {
@@ -27,4 +29,56 @@
 
 .create-blog-button:hover {
     background-color: #0056b3;
+}
+
+.back-to-blog {
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #000000;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* create.css */
+
+.create-blog-container {
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+.create-blog-form {
+    margin-top: 20px; /* Добавляем верхний отступ форме */
+}
+
+.create-blog-form label {
+    display: block; /* Размещаем метки на новой строке */
+    margin-bottom: 5px; /* Добавляем отступ между меткой и полем ввода */
+}
+
+.create-blog-form input,
+.create-blog-form textarea {
+    width: 100%; /* Занимаем 100% ширины родительского контейнера */
+    padding: 8px; /* Добавляем внутренний отступ для элементов ввода */
+    margin-bottom: 10px; /* Добавляем нижний отступ между элементами ввода */
+    box-sizing: border-box; /* Учитываем padding и border в общей ширине элемента */
+}
+
+.create-blog-button {
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста кнопки */
+    padding: 10px 15px; /* Внутренний отступ кнопки */
+    border: none; /* Убираем границу кнопки */
+    cursor: pointer; /* Задаем стиль указателя при наведении */ 
+}
+
+.create-blog-button:hover {
+    background-color: #0056b3; /* Изменяем цвет фона при наведении */
+}
+
+.back-to-blog {
+    margin-top: 10px; /* Добавляем верхний отступ кнопке "Назад к блогам" */
 }

@@ -2,12 +2,18 @@
 
 {% block title %}Войти{% endblock %}
 
+{% load static %}
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'authe/styles/forms.css' %}">        
+{% endblock %}
+
 {% block content %}
- 
-  <form method="post" class="form-signin" style="display: flex; align-items: center; flex-direction: column;padding-top: 250px;">
-    {% csrf_token %}
-    {{ form.username }}
-    {{ form.password }}
+<form method="post" class="form-signin" style="display: flex; align-items: center; flex-direction: column;padding-top: 250px;">
+  {% csrf_token %}
+    {% for f in form %}
+      {{ f }}
+  {% endfor %}
     <button type="submit" class="btn btn-dark">Войти</button>
     <p class="mt-1">Нет аккаунта? <a href="{% url 'authe:register' %}">Зарегистрироваться</a></p>
   </form>

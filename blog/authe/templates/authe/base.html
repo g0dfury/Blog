@@ -24,8 +24,8 @@
             <button type="submit" class="search-button">Найти</button>
         </div>
         <div class="btns">      
-            <button class="register"> Регистрация </button>
-            <button class="login"> Вход </button>
+            <a href="{% url 'authe:register' %}" class="register btn btn-primary"> Регистрация </a>
+            <a href="{% url 'authe:login' %}" class="login btn btn-primary"> Вход </a>
         </div>
     </header>
 

@@ -1,3 +1,91 @@
+
 .form-wrapper {
-    height: 50vh;
+    text-align: center;
+}
+
+.form-signin {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-signin input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.btn-dark {
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.btn-dark:hover {
+    background-color: #1d2124;
+}
+
+/* Добавляем стиль для ссылки "Войти" */
+.form-signin p {
+    margin-top: 10px;
+}
+
+.form-signin a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-signin a:hover {
+    text-decoration: underline;
+}
+
+/* login forms */
+form-signin {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-signin input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.btn-dark {
+    width: 100%; /* Добавлено для растягивания кнопки по ширине формы */
+    background-color: #343a40;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-dark:hover {
+    background-color: #1d2124;
+}
+
+.form-signin p {
+    margin-top: 10px;
+}
+
+.form-signin a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-signin a:hover {
+    text-decoration: underline;
 }

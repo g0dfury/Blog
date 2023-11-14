@@ -8,5 +8,10 @@ class BlogForm(forms.ModelForm):
     class Meta:
         model = Blog
         fields = ['title', 'content']
+
+        widgets = {
+            'title': forms.TextInput(attrs={'placeholder':'Введите заголовок блога'}),
+            'content': forms.Textarea(attrs={'placeholder':'Введите описание блога'})
+        }
         
 

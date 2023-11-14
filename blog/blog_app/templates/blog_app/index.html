@@ -10,24 +10,26 @@
 
 {% block content %}
 
-<p class="mt-1">Хотите создать свой Блог? <a href="{% url 'blogs:create' %}" class="btn btn-dark">Создать</a></p>
+<p class="create-blog-index"><a href="{% url 'blogs:create' %}" class="btn btn-primary">Создать блог</a></p>
 
-    <div class="blog-list">
-        {% for b in blogs %}
-            <div class="blog-item">
-                <h2>{{ b.title }}</h2>
-                <p><strong>Автор:</strong> {{ b.author.username }}</p>
-                <p><strong>Дата создания:</strong> {{ b.created_at|date:"d.m.Y H:i:s" }}</p>
-                <div class="blog-content">
-                    {{ b.content|linebreaks }}
+    <section class="entire">    
+        <div class="blog-list">
+            {% for b in blogs %}
+                <div class="blog-item">
+                    <h2>{{ b.title }}</h2>
+                    <p><strong>Автор:</strong> {{ b.author.username }}</p>
+                    <p><strong>Дата создания:</strong> {{ b.created_at|date:"d.m.Y H:i:s" }}</p>
+                    <div class="blog-content">
+                        {{ b.content|linebreaks }}
+                    </div>
+                    {% if b.author.is_superuser %}
+                        <p class="developer-blog">Блог разработчика</p>
+                    {% else %}
+                        <p class="user-blog">Пользовательский блог</p>
+                    {% endif %}
                 </div>
-                {% if b.author.is_superuser %}
-                    <p class="developer-blog">Блог разработчика</p>
-                {% else %}
-                    <p class="user-blog">Пользовательский блог</p>
-                {% endif %}
-            </div>
-        {% endfor %}
-    </div>
+            {% endfor %}
+        </div>
+    </section>
 {% endblock %}
 

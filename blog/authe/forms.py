@@ -5,24 +5,25 @@ from .models import User
 
 
 class UserSignUpForm(UserCreationForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['password1'].widget.attrs['placeholder'] = 'Введите пароль'
+        self.fields['password2'].widget.attrs['placeholder'] = 'Подтвердите пароль'
+
+
     class Meta: 
         model = User
-        fields = ('username', 'email', 'full_name', 'password1', 'password2')
+        fields = ('username','email', 'full_name', 'password1', 'password2')
 
         widgets = {
-            'email': forms.TextInput(attrs={'placeholder': 'Email'}),
-            'full_name': forms.TextInput(attrs={'placeholder': 'Full Name'}),
-            'username': forms.TextInput(attrs={'placeholder': 'Username'}),
-            'password1': forms.PasswordInput(attrs={'placeholder': 'Password'}),
-            'password2': forms.PasswordInput(attrs={'placeholder': 'Confirm Password'}),
-    }
+            'email': forms.TextInput(attrs={'placeholder': 'Введите email'}),
+            'full_name': forms.TextInput(attrs={'placeholder': 'Введите полное имя'}),
+            'username': forms.TextInput(attrs={'placeholder':'Введите имя пользователя'})
+            }
 
 
 class UserSignInForm(AuthenticationForm):
-    class Meta:
+    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Введите имя пользователя'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Введите пароль'}))
 
-        
-        widgets = {
-            'username': forms.TextInput(attrs={'placeholder': 'Username'}),
-            'password': forms.PasswordInput(attrs={'placeholder': 'Password'}),
-        }
+

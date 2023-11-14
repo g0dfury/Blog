@@ -9,12 +9,14 @@
 
 {% block content %}
     <div class="create-blog-container">
-        <h2>Создание блога</h2>
+        <h2 class="mt-3">Создание блога</h2>
         <form method="post" class="create-blog-form">
             {% csrf_token %}
-            {{ form.as_p }}
+            {% for f in form %}
+                {{ f }}
+            {% endfor %}
             <button type="submit" class="create-blog-button">Создать блог</button>
         </form>
-        <a href="{% url 'blogs:index' %}" class="btn btn-dark">Назад к блогам</a>
+        <a href="{% url 'blogs:index' %}" class="back-to-blog btn btn-dark">Назад к блогам</a>
     </div>
 {% endblock %}

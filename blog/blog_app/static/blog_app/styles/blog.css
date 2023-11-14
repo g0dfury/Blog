@@ -3,14 +3,12 @@
 
 /* Ensure the blog items span the full width with margins */
 /* blog.css */
-
 .blog-list {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
-    max-width: 100%; 
 }
 
 
@@ -19,7 +17,7 @@
     border: 1px solid #ddd;
     padding: 20px; /* Increase padding for more space inside the items */
     margin: 20px 0; /* Add spacing between blog items */
-    max-width: 100%; /* Allow items to take up full width */
+    width: 100%; /* Allow items to take up full width */
     border-radius: 5px;
 }
 
@@ -66,3 +64,13 @@ h2 {
     color: black;
 }
 
+/* creating blog btn */
+.create-blog-index {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.btn-primary{
+    font-weight: 600;
+    font-style:italic;
+}

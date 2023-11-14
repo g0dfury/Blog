@@ -13,8 +13,7 @@
         <form method="post" class="form-signin" style="display: flex; align-items: center; flex-direction: column;padding-top: 250px;">
             {% csrf_token %}
             {% for f in form %}
-                <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{f}}</p>
-                <div class="form-error"> {{f.errors }} </div>
+                {{ f }}
             {% endfor %}
             <button type="submit" class="btn btn-dark"> Зарегистрироваться </button>
             <p class="mt-1">Есть аккаунт? <a href="{% url 'authe:login' %}">Войти</a></p>
