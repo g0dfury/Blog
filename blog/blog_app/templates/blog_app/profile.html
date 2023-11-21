@@ -1,0 +1,32 @@
+<!-- blog_app/templates/blog_app/user_profile.html -->
+{% extends 'authe/base.html' %}
+{% load static %}
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'blog_app/styles/profile.css' %}">        
+{% endblock %}
+
+{% block title %} Личный кабинет {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{ title }}</h1>
+
+        <div class="profile-info">
+            <p>Email: {{ user.email }}</p>
+            <p>Full Name: {{ user.full_name }}</p>
+        </div>
+
+        <h2> {{ user.username }}`s blogs. </h2>
+
+        <div class="blog-form">
+            {% for blog in blogs %}
+                <div class="blog-item">
+                    <p class="blog-title">{{ blog.title }}</p>
+                    <p class="blog-content">{{ blog.content }}</p>
+                    <p class="blog-date">{{ blog.created_at }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

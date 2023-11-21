@@ -1,0 +1,41 @@
+/* blog_app/static/blog_app/styles/profile.css */
+
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #000000;
+}
+
+
+.profile-info {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
+.blog-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.blog-title {
+    color: #4285f4;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.blog-content {
+    line-height: 1.6;
+}
+
+.blog-date {
+    color: #888;
+}

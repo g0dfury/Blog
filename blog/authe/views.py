@@ -2,10 +2,9 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth import login, logout, authenticate
 from django.urls import reverse_lazy
-
-from blog_app import urls
 from .forms import UserSignUpForm, UserSignInForm
-from .models import User
+
+
 
 class Register(View): # для регистрации
     def get(self, request):
@@ -50,3 +49,7 @@ class Fail(View):
     def get(self, request):
         return render(request, 'authe/fail.html')
     
+def signout(request):
+    logout(request)
+    return redirect(reverse_lazy('authe:login'))
+

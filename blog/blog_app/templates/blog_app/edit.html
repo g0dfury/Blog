@@ -1,0 +1,16 @@
+
+{% extends 'authe/base.html' %}
+
+{% block title %}Редактировать блог{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>{{ title }}</h1>
+
+    <form method="post" class="blog-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Сохранить изменения</button>
+    </form>
+  </div>
+{% endblock %}

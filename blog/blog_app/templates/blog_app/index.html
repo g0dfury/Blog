@@ -10,13 +10,14 @@
 
 {% block content %}
 
-<p class="create-blog-index"><a href="{% url 'blogs:create' %}" class="creation btn btn-primary">Создать блог</a></p>
+
 
     <section class="entire">    
         <div class="blog-list">
             {% for b in blogs %}
                 <div class="blog-item">
                     <h2>{{ b.title }}</h2>
+                    <p><strong>ID:</strong> {{ b.id }}</p>
                     <p><strong>Автор:</strong> {{ b.author.username }}</p>
                     <p><strong>Дата создания:</strong> {{ b.created_at|date:"d.m.Y H:i:s" }}</p>
                     <div class="blog-content">

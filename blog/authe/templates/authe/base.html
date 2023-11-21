@@ -17,16 +17,22 @@
 <body>
     <header class="header">
 
-        <h1 class="title"> Decode Blog </h1>
+        <a href="{% url 'blogs:index' %}" class="title"> Decode Blog </a>
 
         <div class="search-bar">
             <input type="text" id="search-input" placeholder="Поиск по блогам">
             <button type="submit" class="search-button">Найти</button>
         </div>
-        <div class="btns">      
-            <a href="{% url 'authe:register' %}" class="register btn btn-primary"> Регистрация </a>
-            <a href="{% url 'authe:login' %}" class="login btn btn-primary"> Вход </a>
-        </div>
+            <div class="btns">     
+                {% if request.user and request.user.is_authenticated %} 
+                    <a href="{% url 'blogs:create' %}" class="register btn btn-primary"> Создать </a>
+                    <a href="{% url 'authe:signout' %}" class="logout btn btn-primary">Выйти</a>
+                    <a href="{% url 'blogs:profile' %}" class="register btn btn-primary">Профиль</a>
+                {% else %}
+                    <a href="{% url 'authe:register' %}" class="register btn btn-primary"> Регистрация </a>
+                    <a href="{% url 'authe:login' %}" class="login btn btn-primary"> Вход </a>
+                {% endif %}
+            </div>
     </header>
 
     {% block content %}

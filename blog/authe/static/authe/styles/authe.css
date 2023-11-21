@@ -21,6 +21,8 @@ body {
 .title, .search, .register, .login {
     font-family: "Roboto", sans-serif; 
     color: #00A2DC; /* Цвет текста */
+    text-decoration: none;
+    text-decoration-style: none;
 }
 
 /* Decode */
@@ -39,7 +41,8 @@ body {
 }
 
 .register,
-.login {
+.login,
+.logout {
     width: 130px;
     padding: 10px 20px;
     margin: 0; 
@@ -53,7 +56,8 @@ body {
 
 
 .register:hover,
-.login:hover {
+.login:hover,
+.logout:hover {
     background-color: #1d2124;
 }
 
