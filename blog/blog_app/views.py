@@ -54,22 +54,40 @@ class ProfileView(View):        # личный профиль
         return render(request, 'blog_app/profile.html', context=context)
     
 
-# class EditBlogView(View):   # edit
-#     def get(self, request, blog_id):
-#         blog = Blog.objects.get(id = blog_id)
-#         form = BlogForm()
-#         context = {
-#             'title':'Редактировать блог',
-#             'blog': blog,
-#             'form': form
-#         }
+class EditBlog(View):   # редактировать
+    def get(self, request, blog_id):
+        blog = Blog.objects.get(id=blog_id)
+        form = BlogForm(blog.to_json())
 
-#         return render(request, 'blog_app/edit.html', context=context)
+        context = {
+            'title': 'Редактировать блог',
+            'form': form,
+            'blog': blog,
+        }
+
+        return render(request, 'blog_app/edit.html', context=context)
     
-#     def post(self, request, blog_id):
-#         blog = Blog.objects.get(id=blog_id)
-#         form = BlogForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('blog_app/profile.html')
-#         return render(request, 'blog_app/edit.html', context = {'form':form, 'blog': blog})
+    def post(self, request, blog_id):
+        blog = Blog.objects.get(id=blog_id)
+        form = BlogForm(request.POST)
+        if form.is_valid():   
+                blog.title = request.POST['title']
+                blog.content = request.POST['content']            
+                blog.save()
+                return redirect(reverse_lazy('blogs:index'))
+        else:
+            context = {
+                'title': 'Редактировать блог',
+                'form': form,
+                'blog': blog,
+                'error': 1,
+            }
+            return render(request, 'blog_app/edit.html', context=context)
+
+
+class DeleteBlog(View): # удаление
+    def get(self, request, blog_id):
+        blog = Blog.objects.get(id=blog_id)
+        blog.delete()
+
+        return redirect(reverse_lazy('blogs:profile'))

@@ -39,3 +39,43 @@ h1 {
 .blog-date {
     color: #888;
 }
+
+/* редактировать + удалить в profile */
+/* blog_app/styles/edit.css */
+
+/* ... (ваш существующий CSS-код) */
+
+.edit-del {
+    margin-top: 20px;
+}
+
+.edit--btn, .delete--btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-right: 10px; 
+    text-decoration: none;
+    color: #fff;
+    border-radius: 7px;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-size: 12px;
+}
+
+.edit--btn {
+    background-color: #4caf50;
+    border: 0.5px solid #000000;
+}
+
+.edit--btn:hover {
+    background-color: #000;
+    border-color: #000;
+}
+
+.delete--btn {
+    background-color: #ff3333;
+    border: 0.5px solid #000000;
+}
+
+.delete--btn:hover {
+    background-color: #000;
+    border-color: #000;
+}

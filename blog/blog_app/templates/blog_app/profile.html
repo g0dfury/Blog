@@ -25,6 +25,10 @@
                     <p class="blog-title">{{ blog.title }}</p>
                     <p class="blog-content">{{ blog.content }}</p>
                     <p class="blog-date">{{ blog.created_at }}</p>
+                    <div class="edit-del">
+                        <a href="{% url 'blogs:edit' blog.id %}" class="edit--btn"> Редактировать </a>
+                        <a href="{% url 'blogs:delete' blog.id %}" class="delete--btn"> Удалить </a>
+                    </div>
                 </div>
             {% endfor %}
         </div>

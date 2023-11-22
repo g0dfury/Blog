@@ -17,7 +17,6 @@
             {% for b in blogs %}
                 <div class="blog-item">
                     <h2>{{ b.title }}</h2>
-                    <p><strong>ID:</strong> {{ b.id }}</p>
                     <p><strong>Автор:</strong> {{ b.author.username }}</p>
                     <p><strong>Дата создания:</strong> {{ b.created_at|date:"d.m.Y H:i:s" }}</p>
                     <div class="blog-content">

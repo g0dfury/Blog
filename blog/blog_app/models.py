@@ -11,4 +11,8 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
 
-    
+    def to_json(self):
+        return {
+            'title': self.title,
+            'content': self.content,
+        }
