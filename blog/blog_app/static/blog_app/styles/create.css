@@ -5,12 +5,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-top: 100px;
 }
 
 .create-blog-form {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    width: 75%;
 }
 
 .create-blog-button {

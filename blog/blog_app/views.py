@@ -12,7 +12,7 @@ from authe.models import User
 
 class ViewAllBlogs(View):   # главная
     def get(self, request):
-        blogs = Blog.objects.all()
+        blogs = Blog.objects.all().order_by('-created_at')
         context = {
             'title': 'Список блогов',
             'blogs': blogs,
