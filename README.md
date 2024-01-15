@@ -15,7 +15,7 @@
 
 2. Перейти к корневой папке:
     ```bash
-    cd <blog>
+    cd blog
     ```
 
 3. Установить зависимости:
@@ -42,5 +42,5 @@
 4. Просматривайте блоги других пользователей.
 
 ## Разработчики
-- [Garaye Emir] - emir.garaev@inbox.ru
+- [Garayev Emir] - emir.garaev@inbox.ru
 <a href="https://github.com/g0dfury"> Author </a>
