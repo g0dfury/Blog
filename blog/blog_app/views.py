@@ -43,7 +43,7 @@ class CreateBlogView(View):     # создать
 class ProfileView(View):        # личный профиль
     def get(self, request):
         user = request.user
-        blogs = Blog.objects.filter(author=user)
+        blogs = Blog.objects.filter(author=user).order_by('-created_at')
 
         context = {
             'title': 'Мой профиль',
